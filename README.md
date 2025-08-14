@@ -10,3 +10,4 @@
 - Crear función resultado amigo secreto
 - Pruebas de caja blanca
 - Pruebas de caja negra
+- Publicando versión final del juego
