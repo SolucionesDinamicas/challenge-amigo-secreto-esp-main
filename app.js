@@ -29,7 +29,7 @@ let arrayNombres = [];
 //función para escuchar cuando el botón es clicado
 function agregarAmigo() {
     let valorAmigo = document.getElementById("amigo").value;
-    console.log(valorAmigo);
+    //console.log(valorAmigo);
     try {
         if (valorAmigo != "") {
             arrayNombres.push(valorAmigo)
