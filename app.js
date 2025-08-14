@@ -62,3 +62,42 @@ function actualizaListaAmigos() {
     listaAmigos.appendChild(li);
   });
 }
+
+function sortearAmigo() {
+  try {
+    //verificamos que no este vacio el arreglo
+    if (arrayNombres.length === 0) {
+      alert("No tienes amigos para sortear!");
+    } else {
+        //Guardamos el tamaño del arreglo
+      let longitudArreglo = arrayNombres.length;
+      //Seleccionar un índice aleatorio del arreglo
+      let indice = Math.floor(Math.random() * longitudArreglo) + 1;
+        //Agregamos el nombre del amigo secreto según su indice
+      let amigoSecreto = arrayNombres[indice - 1];
+
+      //Mostrar amigo secreto y eliminar del arreglo
+      ResultadoAmigoSecreto(amigoSecreto, indice - 1);
+    }
+  } catch (error) {
+    alert(error);
+  }
+}
+
+// Iterar sobre el arreglo y agregar cada amigo como <li>
+function ResultadoAmigoSecreto(amigoSecreto, posicion) {
+  //Seleccionar la lista
+  let listaAmigoSecreto = document.getElementById("resultado");
+  //Limpiar la lista
+  listaAmigoSecreto.innerHTML = "";
+  //Crea el elemento o etiqueta <li>
+  let li = document.createElement("li");
+  //Lleva el valor del amigo secreto a li
+  li.textContent = amigoSecreto;
+  //Agrego el contenido de li y el amigo a la lista
+  listaAmigoSecreto.appendChild(li);
+  //Eliminar amigo del arreglo
+  let elementoEliminado = arrayNombres.splice(posicion, 1);
+  //Actualizamos la lista de amigos para que el usuario identifique quienes quedan
+  actualizaListaAmigos();
+}
