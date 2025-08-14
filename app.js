@@ -32,8 +32,9 @@ function agregarAmigo() {
     //console.log(valorAmigo);
     try {
         if (valorAmigo != "") {
-            arrayNombres.push(valorAmigo)
-            console.log(arrayNombres)
+            arrayNombres.push(valorAmigo);
+            //Limpiamos entrada
+            document.querySelector("#amigo").value = ""            
         } else{
             alert("Debe ingresar al menos un caracter");
         }
@@ -41,3 +42,4 @@ function agregarAmigo() {
         alert("Ingrese un valor válido")
     }
 }
+
